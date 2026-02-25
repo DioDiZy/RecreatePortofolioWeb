@@ -147,7 +147,6 @@
     </footer>
 
     <script>
-      // Select all sections that have an ID and all nav links
       const sections = document.querySelectorAll("section[id], main[id]");
       const navLinks = document.querySelectorAll(".navbar nav ul li a");
 
@@ -162,10 +161,8 @@
           if (entry.isIntersecting) {
             const id = entry.target.getAttribute("id");
 
-            // Remove 'active' from all links
             navLinks.forEach((link) => {
               link.classList.remove("active");
-              // Add 'active' to the link that matches the current section ID
               if (link.getAttribute("href") === `#${id}`) {
                 link.classList.add("active");
               }
@@ -174,7 +171,6 @@
         });
       }, observerOptions);
 
-      // Track each section
       sections.forEach((section) => observer.observe(section));
     </script>
   </body>
